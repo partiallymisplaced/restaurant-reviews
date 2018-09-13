@@ -120,19 +120,19 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  li.appendChild(name);
+  li.appendChild(name).classList.add('reviewer-name');
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  li.appendChild(date);
+  li.appendChild(date).classList.add('review-date');
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  li.appendChild(rating).classList.add('review-rating');
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  li.appendChild(comments);
+  li.appendChild(comments).classList.add('review-comment');
 
   return li;
 }
