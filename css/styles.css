@@ -33,8 +33,9 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 }
 #footer {
+	font-size: .8em;
 	margin: 32px auto 0;
-	border-top: 2px solid;
+	border-top: 1px solid #ddd;
 }
 
 #footer p {
@@ -272,7 +273,7 @@ nav #breadcrumb {
 }
 
 #reviews-container h2 {
-	font-size: 1.2em;
+	font-size: 1.4em;
 	text-transform: uppercase;
 	margin-left: 48px;
 	padding: 48px 0 24px;
@@ -280,14 +281,28 @@ nav #breadcrumb {
 }
 
 #reviews-list {
-	padding: 48px;
+	padding: 0 48px 48px;
 }
 #reviews-list li {
 	list-style-type: none;
+	border-bottom: 1px solid #ccc;
 }
 
 #reviews-list li p {
+	line-height: 1.5em;
 }
+.reviewer-name {
+	font-size: 1.4em;
+	padding-top: 36px;
+}
+.review-rating {
+	font-weight: 600;
+	padding-bottom: 12px;
+}
+.review-comment {
+	padding-bottom: 24px;
+}
+
 
 /* ======================  ====================== */
 .leaflet-control-attribution {
