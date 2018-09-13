@@ -7,17 +7,11 @@
 	/* background-color: rgba(255, 0, 0, 0.1); */
 }
 
-body,td,th,p{
-
-}
 body {
 	font-family: 'Work Sans', sans-serif;
 	background-color: #efefef;
 }
 
-ul, li {
-
-}
 a {
 	text-decoration: none;
 	color: #000;
@@ -26,9 +20,7 @@ a {
 a:hover, a:focus {
 	color: #000;
 }
-a img {
 
-}
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 500;
@@ -58,7 +50,7 @@ header {
 
 header h1 {
 	font-size: 1.6em;
-	padding: 48px;
+	padding: 32px;
   margin: auto;
 	text-transform: uppercase;
 }
@@ -73,7 +65,7 @@ nav {
 }
 
 nav div {
-	padding: 36px 48px;
+	padding: 32px;
 }
 /* ====================== Map ====================== */
 #map {
@@ -138,6 +130,7 @@ nav div {
 	font-style: normal;
 	font-weight: 600;
 }
+
 #restaurants-list li p {
 	line-height: 2em;
 
@@ -212,17 +205,17 @@ nav #breadcrumb {
 }
 
 #restaurant-name {
-	padding-top: 24px;
+	padding-top: 36px;
 	padding-bottom: 24px;
-	margin-bottom: 24px;
+	margin-bottom: 18px;
 	border-bottom: 2px solid;
-	font-size: 1.8em;
+	font-size: 2.1em;
 }
 
 #restaurant-cuisine {
-	padding: 0 0 18px 0;
+	padding: 0 0 36px 0;
 	font-size: 1.2em;
-	font-weight: 600;
+	/* font-weight: 600; */
 }
 
 #restaurant-details {
@@ -236,8 +229,9 @@ nav #breadcrumb {
 }
 
 #restaurant-address {
-	padding: 12px;
+	font-style: normal;
 	font-weight: 600;
+	padding: 12px;
 	background-color: #fbd7cb;
 }
 
@@ -264,6 +258,7 @@ nav #breadcrumb {
 
 #restaurant-hours td:nth-of-type(1){
 	font-weight: 600;
+	padding-right: 24px;
 }
 
 #restaurant-hours td {
@@ -273,17 +268,24 @@ nav #breadcrumb {
 
 /* ====================== Restaurant Reviews ====================== */
 #reviews-container {
+
 }
 
 #reviews-container h2 {
-
+	font-size: 1.2em;
+	text-transform: uppercase;
+	margin-left: 48px;
+	padding: 48px 0 24px;
+	border-bottom: 2px solid #000;
 }
-#reviews-list {
 
+#reviews-list {
+	padding: 48px;
 }
 #reviews-list li {
 	list-style-type: none;
 }
+
 #reviews-list li p {
 }
 
