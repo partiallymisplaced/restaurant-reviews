@@ -21,12 +21,12 @@ ul, li {
 a {
 	text-decoration: none;
 	color: #000;
-	background-color: #fbd7cb;
+
 }
 a:hover, a:focus {
 	color: #000;
 }
-a img{
+a img {
 
 }
 h1, h2, h3, h4, h5, h6 {
@@ -41,6 +41,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 }
 #footer {
+	margin: 32px auto 0;
+	border-top: 2px solid;
+}
+
+#footer p {
+	padding: 32px;
 
 }
 
@@ -53,13 +59,13 @@ header {
 
 header h1 {
 	font-size: 1.6em;
-	padding: 2em;
+	padding: 48px;
   margin: auto;
 	text-transform: uppercase;
 }
 
 header h1 a {
-
+	background-color: #fbd7cb;
 }
 
 /* ====================== Navigation ====================== */
@@ -67,6 +73,9 @@ nav {
 	background-color: #fff;
 }
 
+nav div {
+	padding: 36px 48px;
+}
 /* ====================== Navigation ====================== */
 
 #breadcrumb {
@@ -76,16 +85,19 @@ nav {
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
+		font-weight: 600;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
-    content: "/\00a0";
+    content: "\003e";
+		padding-right: .5em;
+		font-weight: 400;
 }
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-
+	font-weight: 400;
 }
 
 /* Add a color on mouse-over */
@@ -136,7 +148,6 @@ nav {
   min-width: 100%;
 }
 
-/* #restaurants-list li h2, */
 #restaurants-list li address,
 #restaurants-list li p,
 #restaurants-list li a {
@@ -179,19 +190,16 @@ nav {
 }
 
 /* ====================== Restaurant Details ====================== */
-.inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
+
 .inside #map-container {
-  background: #000 none repeat scroll 0 0;
+	height: 300px;
+	width: 400px;
+  /* background: #000 none repeat scroll 0 0;
   height: 87%;
   position: fixed;
   right: 0;
   top: 80px;
-  width: 50%;
+  width: 50%; */
 }
 .inside #map {
   background-color: #ccc;
@@ -215,6 +223,9 @@ nav {
 }
 #restaurant-container,
 #reviews-container {
+	background-color: #fff;
+	max-width: 800px;
+	margin: 3em auto;
 
 }
 #reviews-container {
@@ -231,4 +242,13 @@ nav {
 #reviews-list li p {
 }
 #restaurant-hours td {
+}
+
+.leaflet-control-attribution {
+	font-family: 'Work Sans', sans-serif;
+}
+
+.leaflet-container a {
+	font-weight: 600;
+	color: #000 !important;
 }
