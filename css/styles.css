@@ -47,7 +47,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 #footer p {
 	padding: 32px;
-
 }
 
 /* ====================== Header ====================== */
@@ -75,34 +74,6 @@ nav {
 
 nav div {
 	padding: 36px 48px;
-}
-/* ====================== Navigation ====================== */
-
-#breadcrumb {
-    width: calc(50% - 80px);
-}
-
-/* Display list items side by side */
-#breadcrumb li {
-    display: inline;
-		font-weight: 600;
-}
-
-/* Add a slash symbol (/) before/behind each list item */
-#breadcrumb li+li:before {
-    content: "\003e";
-		padding-right: .5em;
-		font-weight: 400;
-}
-
-/* Add a color to all links inside the list */
-#breadcrumb li a {
-	font-weight: 400;
-}
-
-/* Add a color on mouse-over */
-#breadcrumb li a:hover {
-    text-decoration: underline;
 }
 /* ====================== Map ====================== */
 #map {
@@ -189,47 +160,121 @@ nav div {
 
 }
 
+/* ====================== Breadcrumb ====================== */
+
+nav #breadcrumb {
+	background: #fff			;
+	padding: 16px 32px;
+}
+#breadcrumb ul {
+}
+
+/* Display list items side by side */
+#breadcrumb li {
+	display: inline-block;
+	font-weight: 600;
+}
+
+/* Add a slash symbol (>) before/behind each list item */
+#breadcrumb li+li:before {
+	content: "\003e";
+	padding-right: .5em;
+	font-weight: 400;
+}
+
+/* Add a color to all links inside the list */
+#breadcrumb li a {
+	font-weight: 400;
+}
+
+/* Add a color on mouse-over */
+#breadcrumb li a:hover {
+	text-decoration: underline;
+}
 /* ====================== Restaurant Details ====================== */
 
-.inside #map-container {
-	height: 300px;
-	width: 400px;
-  /* background: #000 none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%; */
-}
-.inside #map {
-  background-color: #ccc;
-  height: 100%;
-  width: 100%;
-}
-.inside #footer {
-
-}
-#restaurant-name {
-
-}
-#restaurant-img {
-
-}
-#restaurant-address {
-
-}
-#restaurant-cuisine {
-
-}
 #restaurant-container,
 #reviews-container {
 	background-color: #fff;
 	max-width: 800px;
 	margin: 3em auto;
-
 }
+
+#restaurant-img {
+	max-width: 100%;
+}
+
+#restaurant-name,
+#restaurant-cuisine,
+#restaurant-hours,
+#restaurant-location-info {
+	margin-left: 48px;
+}
+
+#restaurant-name {
+	padding-top: 24px;
+	padding-bottom: 24px;
+	margin-bottom: 24px;
+	border-bottom: 2px solid;
+	font-size: 1.8em;
+}
+
+#restaurant-cuisine {
+	padding: 0 0 18px 0;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+#restaurant-details {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 48px;
+}
+
+#restaurant-location-info {
+	width: 60%;
+}
+
+#restaurant-address {
+	padding: 12px;
+	font-weight: 600;
+	background-color: #fbd7cb;
+}
+
+.inside #map-container {
+	height: 240px;
+}
+
+.inside #map {
+	background-color: #ccc;
+	height: 100%;
+	width: 100%;
+}
+
+#restaurant-hours {
+	font-size: 0.9em;
+	max-width: 33%;
+	min-width: 33%;
+	margin-right: 48px;
+}
+
+#restaurant-hours td {
+	padding: 6px 6px 6px 0;
+}
+
+#restaurant-hours td:nth-of-type(1){
+	font-weight: 600;
+}
+
+#restaurant-hours td {
+	vertical-align: top;
+}
+
+
+/* ====================== Restaurant Reviews ====================== */
 #reviews-container {
 }
+
 #reviews-container h2 {
 
 }
@@ -241,9 +286,8 @@ nav div {
 }
 #reviews-list li p {
 }
-#restaurant-hours td {
-}
 
+/* ======================  ====================== */
 .leaflet-control-attribution {
 	font-family: 'Work Sans', sans-serif;
 }

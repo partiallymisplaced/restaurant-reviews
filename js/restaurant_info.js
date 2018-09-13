@@ -78,7 +78,6 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 }
 
 // Create restaurant operating hours HTML table and add it to the webpage.
-
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
