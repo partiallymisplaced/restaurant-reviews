@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta name="description" content="Restaurant Reviews">
+  <meta name="keywords" content="Restaurants, Restaurant Reviews, Restaurant Ratings">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
@@ -23,12 +25,12 @@
 
     <nav class="filter-options">
       <div>
-      <label for="neighborhood-select">Filter by:</label>
+      <label for="neighborhoods-select" class="visually-hidden">Filter by neighborhood</label>
       <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
         <option value="all">All Neighborhoods</option>
       </select>
 
-      <label for="cuisines-select"></label>
+      <label for="cuisines-select" class="visually-hidden">Filter by cuisine</label>
       <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
         <option value="all">All Cuisines</option>
       </select>
