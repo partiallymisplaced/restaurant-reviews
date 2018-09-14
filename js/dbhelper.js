@@ -153,3 +153,16 @@ class DBHelper {
     return marker;
   }
 }
+
+// Service worker
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js', {scope: '/'})
+  .then(function(swRegistered) {
+    return;
+  })
+  .catch(function(error) {
+    return;
+  })
+
+}
