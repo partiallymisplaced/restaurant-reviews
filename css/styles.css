@@ -30,6 +30,10 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	display: block;
 }
 
+.visually-hidden {
+	display: none;
+}
+
 #maincontent {
   min-height: 100%;
 }
@@ -100,24 +104,25 @@ nav div {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
-	max-width: 1400px;
+  max-width: 1420px;
+	padding: 36px;
 	list-style: outside none none;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	margin: 0 auto;
 }
 
 #restaurants-list li {
+	max-width: calc(33% - 72px);
 	width: 400px;
-	max-width: calc(33% - 4em);
 	background-color: #fff;
-	margin: 2em;
+	margin: 36px;
 }
 
 #restaurants-list .restaurant-img {
+	width: 100%;
   background-color: #000;
-  max-width: 100%;
-  min-width: 100%;
 }
 
 #restaurants-list li address,
@@ -255,7 +260,7 @@ nav div {
 #restaurant-hours {
 	font-size: 0.9em;
 	max-width: 33%;
-	/* min-width: 33%; */
+	min-width: 33%;
 	margin-right: 48px;
 }
 
@@ -285,6 +290,7 @@ nav div {
 #reviews-list {
 	padding: 0 48px 48px;
 }
+
 #reviews-list li {
 	list-style-type: none;
 	border-bottom: 1px solid #ccc;
@@ -320,14 +326,28 @@ nav div {
 
 /* ====================== Media Quieries ====================== */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 960px) {
+	#restaurants-list {
+		max-width: 960px;
+		padding: 32px;
+	}
+
+	#restaurants-list li {
+		max-width: calc(50% - 64px);
+		background-color: #fff;
+		margin: 32px;
+	}
+
 	#restaurant-hours {
-		min-width: 38%;
+		min-width: 42%;
 	}
 }
 
-
 @media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 640px) {
 	header h1,
 	nav div {
 		font-size: 1.2em;
@@ -342,13 +362,8 @@ nav div {
 	  width: 100%;
 	}
 
-	.filter-options label {
-		font-size: 0.8em;
-		width: 100%;
-		display: block;
-	}
-
 	.filter-options select {
+		width: 100%;
 		margin: 6px 0;
 		padding: 6px 0;
 		font-size: 0.8em;
@@ -361,10 +376,9 @@ nav div {
 	}
 
 	#restaurants-list li {
-		width: 400px;
 		max-width: 100%;
 		background-color: #fff;
-		margin: 2em 0;
+		margin: 24px auto;
 	}
 
 	#breadcrumb {
