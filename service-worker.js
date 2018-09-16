@@ -1,50 +1,42 @@
-var cacheName = 'rr-app-v1';
+const cacheName = 'v1';
 
-// Caches HTML, CSS, JS & img files
-self.addEventListener('install', function(event){
+// Installs service worker
+self.addEventListener('install', function(event) {
+  return;
+});
+
+// Activates service worker and clears existing caches that don't match the name
+self.addEventListener('activate', function(event) {
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll([
-        'index.html',
-        'restaurant.html',
-        'css/styles.css',
-        'img/1.jpg',
-        'img/2.jpg',
-        'img/3.jpg',
-        'img/4.jpg',
-        'img/5.jpg',
-        'img/6.jpg',
-        'img/7.jpg',
-        'img/8.jpg',
-        'img/9.jpg',
-        'img/10.jpg',
-        'js/dbhelper.js',
-        'js/main.js',
-        'js/restaurant_info.js'
-      ]);
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== cacheName) {
+            return caches.delete(cache);
+          }
+        })
+      );
     })
   );
 });
 
-// Requests asset if asset not cached
+// Sends a fetch request and adds files to the cache
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
+    fetch(event.request)
+      .then(function(response) {
+        // Copies fetched files to a cache named fileStorage
+        const fileStorage = response.clone();
+        caches.open(cacheName).then(function(cache) {
+          cache.put(event.request, fileStorage);
+        });
+        return response;
+      })
+      //
+      .catch(function(error) {
+        caches.match(event.request).then(function(response) {
+          return response;
+        });
+      })
   );
-});
-
-// Checks if cache name has changed and deletes old cache if it has
-self.addEventListener('activate', function(event) {
-    event.waitUntil(
-		caches.keys().then(function(cacheNames) {
-			return Promise.all(
-        cacheNames.map(function(thisCacheName) {
-				if (thisCacheName !== cacheName) {
-					return caches.delete(thisCacheName);
-				}
-			}));
-		})
-	);
 });

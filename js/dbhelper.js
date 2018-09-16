@@ -154,15 +154,15 @@ class DBHelper {
   }
 }
 
-// Service worker
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js', {scope: '/'})
-  .then(function(swRegistered) {
-    return;
-  })
-  .catch(function(error) {
-    return;
-  })
-
+// Registers service worker in shared js file
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', function(event){
+    navigator.serviceWorker.register('../service-worker.js')
+    .then(function(register){
+      return;
+    })
+    .catch(function(error){
+      console.log(`${error}`);
+    })
+  });
 }
