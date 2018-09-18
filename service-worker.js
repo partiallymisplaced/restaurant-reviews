@@ -2,7 +2,29 @@ const cacheName = 'v1';
 
 // Installs service worker
 self.addEventListener('install', function(event) {
-  return;
+  event.waitUntil(
+    caches.open('v2').then(function(cache) {
+      return cache.addAll([
+        'index.html',
+        'restaurant.html',
+        'css/styles.css',
+        'data/restaurants.json',
+        'img/1.jpg',
+        'img/2.jpg',
+        'img/3.jpg',
+        'img/4.jpg',
+        'img/5.jpg',
+        'img/6.jpg',
+        'img/7.jpg',
+        'img/8.jpg',
+        'img/9.jpg',
+        'img/10.jpg',
+        'js/dbhelper.js',
+        'js/main.js',
+        'js/restaurant_info.js'
+      ]);
+    })
+  );
 });
 
 // Activates service worker and clears existing caches that don't match the name
